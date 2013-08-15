@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/calendar.css" />
   <link rel="stylesheet" type="text/css" href="css/custom_2.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script src="js/modernizr.custom.63321.js"></script>
 </head>
@@ -30,7 +31,7 @@
       <!-- Place everything within .navbar-collapse to hide it until above 768px -->
       <div class="nav-collapse collapse navbar-responsive-collapse">
        <ul class="nav navbar-nav">
-        <li class="active"><a href="#"><i class='icon-plus'></i> &nbsp;Create new</a></li>
+        <li class="active"><a href="#" id='create_new_button'><i class='icon-plus'></i> &nbsp;Create new</a></li>
         <li><a href="#"><i class="icon-calendar"></i> &nbsp;Calendar</a></li>
         <li><a href="#"><i class="icon-list-ul"></i> &nbsp;View All</a></li>
       </ul>
@@ -39,6 +40,44 @@
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
 </div><!-- /.navbar -->
+<div id='create_slide'>
+  <a id="create_slide_close"><i class="icon-remove icon-large"></i></a>
+<form role="form">
+  <fieldset>
+    <legend>Create a new lesson plan</legend>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label>Objectives</label>
+      <textarea rows='5' class="form-control" placeholder="Objectives"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Materials</label>
+      <textarea rows='5' class="form-control" placeholder="Materials"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Procedures</label>
+      <textarea rows='5' class="form-control" placeholder="Procedures"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Closure</label>
+      <textarea rows='5' class="form-control" placeholder="Closure"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Homework</label>
+      <textarea rows='5' class="form-control " placeholder="Homework"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </fieldset>
+</form>
+</div>
 <div class="container-fluid">
   <section class="main">
     <div class="custom-calendar-wrap">
@@ -61,11 +100,19 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.calendario.js"></script>
 <script type="text/javascript" src="js/data.js"></script>
+
 <script type="text/javascript"> 
 $(function() {
 
+$('#create_new_button').on('click',function(){
 
+  $('#create_slide').css('left','-50px');
+});
 
+$('#create_slide_close').on('click',function(){
+
+  $('#create_slide').css('left','-100%');
+});
 
   var transEndEventNames = {
     'WebkitTransition' : 'webkitTransitionEnd',
@@ -143,8 +190,6 @@ var element = $(this);
 
          return false;
        }); 
-
-
 
       });
 

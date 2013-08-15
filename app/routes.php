@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function()
+Route::get('create', function()
 {
-	return View::make('hello');
+	return View::make('create');
 });
+
+
 
 Route::post('return', function(){
 	sleep(1);

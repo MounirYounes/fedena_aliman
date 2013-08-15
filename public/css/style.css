@@ -34,3 +34,44 @@ tr th
 	font-size:24px;
 	color:#ffcc00;
 }
+
+#create_slide
+{
+	width:100%;
+	height:calc(100% - 50px);
+	position:fixed;
+	background:white;
+	top:50px;
+	left:-100%;
+	z-index: 99999;
+	padding:20px;
+	padding-left:100px;
+	padding-right:50px;
+	overflow-y:scroll;
+	box-shadow: 6px 2px 12px rgba(0,0,0,0.6);
+
+	transition: left 1s ease;
+-webkit-transition: left 1s ease; /* Safari */
+}
+
+
+#create_slide input, #create_slide textarea
+{
+	width:400px;
+}
+
+#create_slide_close
+{
+	position:absolute;
+	right:10px;
+	top:10px;
+	cursor:pointer;
+	color:#ffcc00;
+}
+
+.form-control:focus
+{
+	-webkit-box-shadow:0 0 0;
+	box-shadow:0 0 0;
+	border:2px solid #ffcc00;
+}
